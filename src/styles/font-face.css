@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Monoid';
+  src: url(./font/Monoid-Dollar-0-1-l/Monoid-Regular-Dollar-0-1-l.ttf)
+}
+
+body {
+  font-family: 'Monoid'
+}
