@@ -4,15 +4,15 @@ import '../styles/iconZone.scss'
 
 export default (props) => {
 
-  const theButton = <Button onClick={props.handleClick}>I'm bored. Click me!</Button>
+  const theButton = <Button variant="danger" style={{padding: '5%', fontSize: '1.2rem'}} onClick={props.handleClick}>I'm bored. Click me!</Button>
 
   return(
     <>
       {props.button || props.aWildButtonAppears() }
       <Row style={{marginBottom: '6%'}}>
-        <Col xs={12} md={6}>
+        <Col xs={12} md={4}>
           <Card>
-            <Card.Img />
+            <Card.Img src='/profile.jpg' height='auto' width='auto' />
             {props.button && theButton}
             <Card.Body>
               {props.aboutText}
@@ -25,7 +25,7 @@ export default (props) => {
             </Card.Footer>
           </Card>
         </Col>
-        <Col xs={12} md={6}>
+        <Col xs={12} md={8}>
           <ResponsiveEmbed style={{paddingBottom: '37%'}}>
             <object 
               class="embed-responsive-item"

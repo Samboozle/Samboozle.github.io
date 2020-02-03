@@ -6,7 +6,7 @@ export default () => {
   return(
     <div>
       <Jumbotron fluid style={{ marginBottom: 0, backgroundColor: '#4b8fea', textAlign: 'center', paddingBottom: '1%', paddingTop: '1.5%'}}>
-        <h1 style={{ color: 'white'}}>Samuel Anthony Bates</h1>
+        <h1 style={{ color: 'white'}}>Samuel Bates</h1>
       </Jumbotron>
       <Navbar style={{ justifyContent: 'center' }}>
         <Nav variant='tabs' defaultActiveKey='/about'>
