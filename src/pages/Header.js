@@ -5,19 +5,16 @@ import { Link } from 'react-router-dom'
 export default () => {
   return(
     <div>
-      <Jumbotron style={{textAlign: 'center'}}>
-        <h1>Samuel Anthony Bates</h1>
+      <Jumbotron fluid style={{ marginBottom: 0, backgroundColor: '#4b8fea', textAlign: 'center', paddingBottom: '1%', paddingTop: '1.5%'}}>
+        <h1 style={{ color: 'white'}}>Samuel Anthony Bates</h1>
       </Jumbotron>
-      <Navbar>
-        <Nav>
+      <Navbar style={{ justifyContent: 'center' }}>
+        <Nav variant='tabs' defaultActiveKey='/about'>
           <Nav.Item>
-            <Link to="/">Home</Link>
+            <Link className='nav-link' to="/about" style={{ color: '#4b8fea' }}>About</Link>
           </Nav.Item>
           <Nav.Item>
-            <Link to="/about">About</Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Link to="/skills">Skills</Link>
+            <Link className='nav-link' to="/skills" style={{ color: '#4b8fea' }}>Skills</Link>
           </Nav.Item>
         </Nav>
       </Navbar>

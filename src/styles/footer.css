@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Monoid-Bold';
+    src: url('./font/font/Monoid-Bold-Dollar-0-1-l.ttf');
+}
+
+.footer {
+    font-family: 'Monoid-Bold';
+    color: white;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    background-color: #4b8fea;
+    padding-top: 0%
+} 
