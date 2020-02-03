@@ -12,7 +12,7 @@ export default [
   {
     skill: 'Teaching',
     icon: '/icons/teaching.png',
-    desc: "Samuel strives to take coarse technical material and make it more granular for those in need."
+    desc: "Samuel strives to take coarse technical material and make it more granular for his peers."
   },
   {
     skill: 'Ruby',
