@@ -1,18 +1,21 @@
 import React from 'react'
-import { Row, Col, ResponsiveEmbed, Card, Button } from 'react-bootstrap'
+import { Row, Col, ResponsiveEmbed, Card, Button, Accordion } from 'react-bootstrap'
 import '../styles/iconZone.scss'
 
 export default (props) => {
 
-  const theButton = <Button variant="danger" style={{padding: '5%', fontSize: '1.2rem'}} onClick={props.handleClick}>I'm bored. Click me!</Button>
+  const theButton = <Button variant="danger" style={{padding: '5%', fontSize: '1.2rem'}} onClick={props.handleClick}>Bored? Click me!</Button>
 
   return(
-    <>
+    <Accordion>
       {props.button || props.aWildButtonAppears() }
       <Row style={{marginBottom: '6%'}}>
-        <Col xs={12} md={4}>
+        <Col xs={12} md={5}>
           <Card>
-            <Card.Img src='/profile.jpg' height='auto' width='auto' />
+            <Accordion.Toggle as={Button} eventKey='0'>See my face!</Accordion.Toggle>
+            <Accordion.Collapse eventKey='0'>
+              <Card.Img src='/profile.jpg' height='auto' width='auto' />
+            </Accordion.Collapse>
             {props.button && theButton}
             <Card.Body>
               {props.aboutText}
@@ -25,7 +28,7 @@ export default (props) => {
             </Card.Footer>
           </Card>
         </Col>
-        <Col xs={12} md={8}>
+        <Col xs={12} md={7}>
           <ResponsiveEmbed style={{paddingBottom: '37%'}}>
             <object 
               class="embed-responsive-item"
@@ -36,6 +39,6 @@ export default (props) => {
           </ResponsiveEmbed>
         </Col>
       </Row>
-    </>
+    </Accordion>
   )
 }

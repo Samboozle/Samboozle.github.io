@@ -28,7 +28,8 @@ class App extends React.Component {
         F.piglatin,
         F.sillycase,
         F.ubbydubby,
-        F.enigma
+        F.enigma,
+        F.binaryText
       ]
     }
   }
@@ -42,14 +43,14 @@ class App extends React.Component {
   }
 
   aWildButtonAppears = () => {
-    setTimeout(() => this.setState({button: true}), 8400)
+    setTimeout(() => this.setState({button: true}), 6000)
   }
 
   render(){
     return(
       <Router>
         <Pages.Header />
-        <Container>
+        <Container fluid style={{ width: '85%' }}>
           <Switch>
             <Route 
               exact path='/'
