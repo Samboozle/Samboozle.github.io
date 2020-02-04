@@ -1,17 +1,18 @@
 import React from 'react';
 
 import { 
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Redirect
 } from 'react-router-dom'
 
-import {
-  Container
-} from 'react-bootstrap'
+import Container from 'react-bootstrap/Container'
 
+// my bio
 import aboutme from './content/aboutme'
+
+// silly text logic imports
 import * as F from './content/xporter'
 
 // page components
@@ -43,12 +44,12 @@ class App extends React.Component {
   }
 
   aWildButtonAppears = () => {
-    setTimeout(() => this.setState({button: true}), 6000)
+    setTimeout(() => this.setState({button: true}), 5000)
   }
 
   render(){
     return(
-      <Router>
+      <Router basename='/portfolio'>
         <Pages.Header />
         <Container fluid style={{ width: '85%' }}>
           <Switch>
