@@ -5,25 +5,25 @@ import {
   Switch,
   Route,
   Redirect
-} from 'react-router-dom'
+} from 'react-router-dom';
 
-import Container from 'react-bootstrap/Container'
+import Container from 'react-bootstrap/Container';
 
 // my bio
-import aboutme from './content/aboutme'
+import { aboutMe } from './content';
 
 // silly text logic imports
-import * as F from './content/xporter'
+import * as F from './textManip';
 
 // page components
-import * as Pages from './pages/xporter.js'
+import * as C from './components';
 
 class App extends React.Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      aboutText: aboutme,
-      button: false,
+      aboutText: aboutMe,
+      showButton: false,
       clicked: false,
       sillyDispatcher: [
         F.piglatin,
@@ -36,51 +36,54 @@ class App extends React.Component {
   }
 
   handleClick = () => {
-    let { aboutText, clicked, sillyDispatcher } = this.state
+    let { aboutText, clicked, sillyDispatcher } = this.state;
     this.setState({
-      aboutText: clicked ? aboutme : sillyDispatcher[Math.floor(Math.random() * sillyDispatcher.length)](aboutText),
+      aboutText: clicked ? aboutMe : sillyDispatcher[Math.floor(Math.random() * sillyDispatcher.length)](aboutText),
       clicked: !clicked
-    })
+    });
   }
 
   aWildButtonAppears = () => {
-    setTimeout(() => this.setState({button: true}), 5000)
+    setTimeout(() => this.setState({ showButton: true }), 5000);
   }
 
   render(){
-    return(
+    return (
       <Router basename='/portfolio'>
-        <Pages.Header />
-        <Container fluid style={{ width: '85%' }}>
+        <C.Header />
+        <Container fluid style={{ width: '85%', paddingBottom: '5%' }}>
           <Switch>
             <Route 
               exact path='/'
               render={() => <Redirect to='/about' />}
             />
             <Route
-              exact path='/about'
+              path='/about'
               render={() => {
                 return(
-                  <Pages.About 
-                    aboutText={this.state.aboutText} 
-                    handleClick={this.handleClick}
-                    aWildButtonAppears={this.aWildButtonAppears}
-                    button={this.state.button}
+                  <C.About 
+                    aboutText={ this.state.aboutText } 
+                    handleClick={ this.handleClick }
+                    aWildButtonAppears={ this.aWildButtonAppears }
+                    showButton={ this.state.showButton }
                   />
-                )
+                );
               }}
             />
             <Route
-              exact path='/skills'
-              component={Pages.Skills}
+              path='/skills'
+              component={ C.Skills }
+            />
+            <Route
+              path='/projects'
+              component={ C.Projects }
             />
           </Switch>
         </Container>
-        <Pages.Footer />
+        <C.Footer />
       </Router>
-    )
+    );
   }
 }
-
 
 export default App;

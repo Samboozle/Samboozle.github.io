@@ -44,4 +44,4 @@ export default [
     icon: '/icons/writing.png',
     desc: 'Believe it or not, Samuel writes all of his own copy and most of his own emails.'
   },
-]
+];

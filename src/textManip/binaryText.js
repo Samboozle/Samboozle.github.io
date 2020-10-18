@@ -3,5 +3,5 @@ const binaryStar = () => {
 }
 
 export default (str) => {
-  return str.replace(/./g, s => binaryStar())
+  return str.replace(/./g, _ => binaryStar())
 }
